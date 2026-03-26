@@ -1,0 +1,152 @@
+We need to replace ALL existing dialogue and tone in the game.
+
+The current messages feel:
+- overly emotional
+- too explicit
+- unrealistic
+- like low-quality fanfic
+- characters are too cooperative and explain too much
+
+This is NOT the direction.
+
+---
+
+NEW DIRECTION (CRITICAL)
+
+The game is NOT about expressing feelings.
+
+It is about:
+→ how communication decisions change shared understanding under uncertainty
+
+Every line should feel:
+- restrained
+- slightly indirect
+- realistic
+- high-signal, low-word-count
+- written by people who are thinking, not narrating
+
+---
+
+WRITING RULES (STRICT)
+
+1. No over-explaining emotions  
+   ❌ “I felt like you didn’t care”  
+   ✅ “That didn’t land the way I expected”
+
+2. No clean resolution  
+   Conversations should feel unfinished or slightly misaligned
+
+3. The other person should apply pressure  
+   They challenge, redirect, or narrow the conversation
+
+4. Every line should either:
+   - increase clarity
+   - create ambiguity
+   - build or reduce trust
+   - shift alignment
+
+5. Keep responses short  
+   Most lines should be 3–8 words
+
+6. Avoid therapy language completely
+
+7. Avoid dramatic phrasing  
+   No “I never stopped thinking about you” type lines
+
+---
+
+TARGET FEEL
+
+This should feel like:
+- two thoughtful people with incomplete information
+- mild tension in every exchange
+- subtle power shifts
+- realistic texting cadence
+
+---
+
+EXAMPLE (REFERENCE QUALITY)
+
+Them:  
+You didn’t respond.
+
+You:  
+I saw it late.
+
+Them:  
+You always say that.
+
+You:  
+That’s fair.
+
+Them:  
+So what happened.
+
+You:  
+I didn’t prioritize it.
+
+Them:  
+…right
+
+---
+
+Another example:
+
+Them:  
+Does this still make sense?
+
+You:  
+Depends what you think we agreed on.
+
+Them:  
+Same as before?
+
+You:  
+Not exactly.
+
+---
+
+Another example:
+
+Them:  
+So what is this.
+
+You:  
+Something I didn’t say earlier.
+
+Them:  
+Then say it.
+
+---
+
+STYLE SUMMARY
+
+- minimal
+- precise
+- slightly uncomfortable
+- no emotional monologues
+- no “perfect” communication
+- allow misinterpretation
+
+---
+
+TASK
+
+Rewrite ALL existing messages in the game to match this tone.
+
+Do NOT preserve old phrasing.
+
+Do NOT soften conflict.
+
+If a line feels obvious, rewrite it.
+
+If a line feels emotional, compress it.
+
+If a line feels clean, introduce tension.
+
+---
+
+We will layer gameplay systems later.
+
+Right now the goal is:
+→ make the conversation feel real, sharp, and worth reading

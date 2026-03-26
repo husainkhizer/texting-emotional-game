@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Last Message"
+version = "1.0.0"
+id = "artifacts/last-message"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20828
+
+[services.development]
+run = "pnpm --filter @workspace/last-message run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/last-message", "run", "build" ]
+publicDir = "artifacts/last-message/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20828"
+BASE_PATH = "/"

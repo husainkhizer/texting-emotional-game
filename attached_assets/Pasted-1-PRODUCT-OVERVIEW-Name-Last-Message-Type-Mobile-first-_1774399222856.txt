@@ -1,0 +1,309 @@
+1. PRODUCT OVERVIEW
+
+Name: Last Message
+Type: Mobile-first web narrative game
+
+One-liner:
+Complete broken messages. See what your choices say about you.
+
+Core Idea:
+Players reconstruct incomplete text messages by choosing words.
+Each choice subtly shapes hidden emotional variables (honesty, timing, vulnerability, etc.).
+At the end, the system generates a personalized reflection.
+
+2. CORE GAME LOOP
+
+User sees a broken message with 1 missing word
+
+User selects 1 of 2–4 word options
+
+Word inserts into sentence (animated)
+
+Sentence completes → short pause
+
+Next message appears
+
+After ~15 messages → reflection generated
+
+Loop Goal:
+Fast, intuitive, emotionally engaging
+
+3. USER EXPERIENCE PRINCIPLES
+
+No tutorial required
+
+One interaction per screen
+
+Minimal UI — message is the focus
+
+Subtle pacing (micro-delays matter)
+
+Silence used intentionally (especially at the end)
+
+4. UI STRUCTURE
+Screen 1 — Landing
+
+Title: Last Message
+
+Subtitle: “Complete the message. See what it says about you.”
+
+CTA: “Play”
+
+Background: subtle animated message fragments
+
+Screen 2 — Game (Core Screen)
+
+Layout:
+
+Top: minimal progress indicator (dots or bar)
+
+Center: message with missing word
+
+Bottom: word options (tap targets)
+
+Example:
+“I didn’t think you would ___.”
+
+Options:
+
+stay
+
+care
+
+leave
+
+notice
+
+Interaction Behavior:
+
+Tap → word animates into sentence
+
+Slight haptic / visual feedback
+
+300–500ms pause after completion
+
+Auto-transition to next message
+
+Screen 3 — Transition (Optional)
+
+Fade between messages
+
+No buttons needed
+
+Screen 4 — Ending
+
+Flow:
+
+Final message completes
+
+Typing indicator appears (1.5–2s)
+
+Disappears
+
+Shows:
+
+Seen 2:14 AM
+
+Short pause
+
+Reflection appears
+
+Screen 5 — Reflection
+
+Structure:
+
+Short paragraph (3–5 lines)
+
+Optional title (e.g. “The Late Realizer”)
+
+Buttons:
+
+Replay
+
+Share
+
+5. GAME SYSTEM (SIMPLIFIED)
+
+Each choice updates hidden variables:
+
+Core Axes:
+
+honesty
+
+vulnerability
+
+timing
+
+agency
+
+ambiguity
+
+closeness
+
+distance
+
+repair
+
+longing
+
+Each option:
+
+adds/subtracts small values (-2 to +2)
+
+At End:
+
+System computes:
+
+Narrative outcome (what happened)
+
+Behavioral pattern (how user acted)
+
+Core tension (contradiction)
+
+Then generates reflection using text templates.
+
+6. TECH STACK (RECOMMENDED)
+
+Frontend:
+
+React (Vite or Next.js)
+
+Tailwind CSS
+
+Framer Motion (animations)
+
+State:
+
+Local state or Zustand
+
+Backend (lightweight):
+
+API routes (for AI or future expansion)
+
+Storage:
+
+JSON for levels
+
+localStorage for session state
+
+Optional:
+
+OpenAI API (for reflection polish or generation)
+
+7. DATA STRUCTURE
+Level Object
+{
+  "id": 1,
+  "text": "I didn’t think you would ___.",
+  "options": [
+    {
+      "text": "stay",
+      "weights": {
+        "closeness": 2,
+        "vulnerability": 1
+      }
+    },
+    {
+      "text": "leave",
+      "weights": {
+        "distance": 2,
+        "finality": 1
+      }
+    }
+  ]
+}
+Game State
+{
+  "currentLevel": 5,
+  "axes": {
+    "honesty": 3,
+    "vulnerability": -1,
+    "timing": -4,
+    "repair": 2
+  }
+}
+8. REFLECTION ENGINE (SIMPLIFIED)
+
+At end:
+
+Aggregate axis scores
+
+Determine:
+
+outcome (e.g. missed timing)
+
+pattern (e.g. withheld, pursued)
+
+tension (e.g. truth vs timing)
+
+Select text fragments:
+
+opening
+
+insight
+
+tension line
+
+closing
+
+Combine into final output
+
+9. MVP SCOPE
+
+Must have:
+
+15–20 levels
+
+clean mobile UI
+
+smooth interactions
+
+working reflection system
+
+replay button
+
+Nice to have:
+
+share card
+
+daily message
+
+AI-generated levels
+
+10. SUCCESS CRITERIA
+
+The game works if:
+
+user understands it instantly
+
+user pauses before choosing words
+
+user feels something at the end
+
+user wants to replay or share
+
+11. KEY DIFFERENTIATOR
+
+This is not a puzzle game.
+
+It is:
+
+A system that turns small word choices into a reflection of how people communicate in meaningful moments.
+
+12. BUILD ORDER
+
+Static UI (no logic)
+
+Word selection interaction
+
+Level progression
+
+State tracking (axes)
+
+Ending + “Seen” moment
+
+Reflection generator
+
+Polish (animation + spacing)
+
+Optional AI layer

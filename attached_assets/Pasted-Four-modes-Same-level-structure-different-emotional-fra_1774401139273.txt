@@ -1,0 +1,919 @@
+Four modes
+
+Same level structure, different emotional framing and writing style.
+
+Emotionally Gutting
+Heavy, intimate, unresolved, reflective
+
+Sarcastic Coworker
+Petty, dry, passive-aggressive, office-specific
+
+Absolute Humor
+Chaotic, absurd, ridiculous, memeable
+
+Balanced
+Slightly serious, emotionally intelligent, broadest appeal
+
+That is the right move because the player instantly understands:
+
+same mechanic, different flavor
+
+Best product framing
+
+Call them Modes or Threads.
+
+Example:
+
+Gutting Mode
+
+Coworker Mode
+
+Chaos Mode
+
+Balanced Mode
+
+If you want slightly more premium naming:
+
+Aftermath
+
+Slack Thread
+
+Unhinged
+
+Between the Lines
+
+That second naming system is stronger.
+
+My recommendation for naming
+
+Aftermath -- emotionally gutting
+
+Slack Thread -- sarcastic coworker
+
+Unhinged -- absolute humor
+
+Between the Lines -- balanced, slightly serious
+
+That feels branded.
+
+How the 20 levels should work
+
+You said you want 20 levels shared at once.
+
+Best structure:
+
+20 base scenarios
+
+each scenario rewritten across all 4 modes
+
+So instead of writing 80 unrelated levels, you write:
+
+20 core moments
+
+4 tonal versions of each
+
+That gives you:
+
+consistency
+
+easier balancing
+
+great replay value
+
+Example core scenario
+
+Base scenario:
+“I didn’t think you would ___.”
+
+Then by mode:
+
+Aftermath
+
+“I didn’t think you would stay.”
+
+Slack Thread
+
+“I didn’t think you would circle back.”
+
+Unhinged
+
+“I didn’t think you would survive that group chat.”
+
+Between the Lines
+
+“I didn’t think you would say that.”
+
+Same structure. Different payoff.
+
+That is how you make this scalable.
+
+Recommended 20 shared scenario types
+
+These are the 20 level “slots” that all modes should share:
+
+Unexpected reply
+
+Hesitation to reach out
+
+It’s been a while
+
+Tone felt different
+
+Misunderstanding
+
+Regret over wording
+
+Situation escalated
+
+Waiting too long
+
+Confession moment
+
+Fear of being left
+
+Last time together
+
+Replaying what happened
+
+Wondering if they saw it
+
+Wishing it was said sooner
+
+Final truth
+
+Hope for response
+
+Ownership of fault
+
+Realizing it changed you
+
+Letting go or not
+
+Final unresolved message
+
+This is the right amount for MVP.
+It feels substantial without becoming too big.
+
+How each mode should feel
+1. Aftermath -- emotionally gutting
+
+Purpose:
+
+emotional depth
+
+reflection
+
+strongest “Seen” ending
+
+Tone:
+
+quiet
+
+intimate
+
+painful but elegant
+
+Examples:
+
+“I should have told you before it turned into silence.”
+
+“I kept waiting for the right moment, and then there wasn’t one.”
+
+“I don’t know if you ever read what I meant.”
+
+Reflection style:
+
+philosophical
+
+restrained
+
+piercing
+
+2. Slack Thread -- sarcastic coworker
+
+Purpose:
+
+relatable office comedy
+
+passive-aggressive humor
+
+highly shareable
+
+Tone:
+
+dry
+
+sharp
+
+realistic
+
+mildly toxic in a funny way
+
+Examples:
+
+“Just circling back on the thing you said was ‘quick.’”
+
+“I wasn’t sure if this needed a reply, but apparently nothing does.”
+
+“Love the visibility. Unclear on the ownership.”
+
+Reflection style:
+
+cutting
+
+funny
+
+slightly too real
+
+Example ending:
+
+You communicated clearly, but unfortunately to coworkers.
+
+3. Unhinged -- absolute humor
+
+Purpose:
+
+widest viral potential
+
+absurdist comedy
+
+chaos mode
+
+Tone:
+
+ridiculous
+
+fast
+
+overcommitted
+
+meme-friendly
+
+Examples:
+
+“I didn’t mean to launch a blood feud in the family group chat.”
+
+“You cannot just say ‘heard’ after what happened at Applebee’s.”
+
+“I need you to know the raccoon was already inside.”
+
+Reflection style:
+
+chaotic but smart
+
+weirdly insightful
+
+super shareable
+
+Example ending:
+
+You pursued truth with the confidence of someone who had already lost everything.
+
+4. Between the Lines -- balanced
+
+Purpose:
+
+broadest audience
+
+best landing mode
+
+strongest for first-time players
+
+Tone:
+
+emotionally grounded
+
+thoughtful
+
+slightly serious
+
+accessible
+
+Examples:
+
+“I thought you understood what I was trying to say.”
+
+“I wish I had been clearer earlier.”
+
+“Some things changed before either of us named them.”
+
+Reflection style:
+
+reflective
+
+measured
+
+gently confronting
+
+This should be the default mode on first launch.
+
+Best UX structure
+Home screen
+
+Show all 4 modes as selectable cards.
+
+Each card should communicate vibe fast:
+
+Aftermath
+
+For the words you should’ve said sooner.
+
+Slack Thread
+
+For office politics, dry replies, and calendar violence.
+
+Unhinged
+
+For chaos, nonsense, and terrible decisions.
+
+Between the Lines
+
+For thoughtful messages that hit a little too close.
+
+That instantly sells the whole concept.
+
+Best build approach
+
+Do not build separate logic for each mode.
+
+Build this data structure:
+
+type Mode = "aftermath" | "slackThread" | "unhinged" | "betweenTheLines";
+
+type LevelVariant = {
+  prompt: string;
+  options: { text: string; weights: Record<string, number> }[];
+};
+
+type SharedLevel = {
+  id: number;
+  scenario: string;
+  variants: Record<Mode, LevelVariant>;
+};
+
+That way:
+
+same level ID
+
+same progression
+
+different writing by mode
+
+This is the cleanest architecture.
+
+Best reflection structure by mode
+
+Same engine, different voice.
+
+Aftermath
+
+Reflective and poetic
+
+Slack Thread
+
+Dry and observational
+
+Unhinged
+
+Chaotic and ridiculous
+
+Between the Lines
+
+Measured and insightful
+
+So the system resolves:
+
+outcome
+
+pattern
+
+tension
+
+Then wraps it in the selected mode’s voice.
+
+That is much better than building 4 different engines.
+
+My strongest recommendation
+
+For launch:
+
+Default: Between the Lines
+
+Prestige mode: Aftermath
+
+Viral mode: Unhinged
+
+Relatable social mode: Slack Thread
+
+That gives you:
+
+one mode for broad appeal
+
+one for emotional depth
+
+one for humor
+
+one for work culture virality
+
+Very strong mix.
+
+What I think you should build next
+
+The next right deliverable is:
+
+20 shared scenarios × 4 mode variants
+
+That becomes your actual content backbone.
+
+Then after that:
+
+tone-specific reflection writing
+
+mode-specific UI polish
+
+If you want, I’ll write the full 20 shared level grid across all 4 modes in a copy-pasteable format.
+
+write the full 20 shared level grid across all 4 modes in a copy-pasteable format
+
+Absolutely. Here’s a copy-pasteable shared level grid for 20 scenarios across all 4 modes.
+
+This is structured so you can drop it into Replit as a content file and wire it into the engine later.
+
+Modes
+
+aftermath = emotionally gutting
+
+slackThread = sarcastic coworker
+
+unhinged = absolute humor
+
+betweenTheLines = balanced, slight serious lean
+
+export const sharedLevels = [
+  {
+    id: 1,
+    scenario: "unexpected_reply",
+    variants: {
+      aftermath: {
+        prompt: "I didn’t think you would ___.",
+        options: ["reply", "stay", "remember", "come back"]
+      },
+      slackThread: {
+        prompt: "I didn’t think you would ___.",
+        options: ["reply-all", "circle back", "escalate", "care"]
+      },
+      unhinged: {
+        prompt: "I didn’t think you would ___.",
+        options: ["survive", "respond", "double down", "bring snacks"]
+      },
+      betweenTheLines: {
+        prompt: "I didn’t think you would ___.",
+        options: ["respond", "stay", "notice", "say that"]
+      }
+    }
+  },
+  {
+    id: 2,
+    scenario: "hesitation_to_reach_out",
+    variants: {
+      aftermath: {
+        prompt: "I wasn’t sure if I should ___ you.",
+        options: ["text", "call", "tell", "bother"]
+      },
+      slackThread: {
+        prompt: "I wasn’t sure if I should ___ you.",
+        options: ["ping", "email", "follow up with", "cc"]
+      },
+      unhinged: {
+        prompt: "I wasn’t sure if I should ___ you.",
+        options: ["warn", "summon", "text", "challenge"]
+      },
+      betweenTheLines: {
+        prompt: "I wasn’t sure if I should ___ you.",
+        options: ["text", "call", "tell", "reach out to"]
+      }
+    }
+  },
+  {
+    id: 3,
+    scenario: "its_been_a_while",
+    variants: {
+      aftermath: {
+        prompt: "It’s been a while since we last ___.",
+        options: ["talked", "laughed", "saw each other", "meant anything"]
+      },
+      slackThread: {
+        prompt: "It’s been a while since we last ___.",
+        options: ["synced", "aligned", "heard back", "pretended this was efficient"]
+      },
+      unhinged: {
+        prompt: "It’s been a while since we last ___.",
+        options: ["made contact", "caused damage", "ate indoors", "fought raccoons"]
+      },
+      betweenTheLines: {
+        prompt: "It’s been a while since we last ___.",
+        options: ["talked", "connected", "laughed", "saw each other"]
+      }
+    }
+  },
+  {
+    id: 4,
+    scenario: "tone_felt_different",
+    variants: {
+      aftermath: {
+        prompt: "You sounded different when you ___.",
+        options: ["answered", "replied", "paused", "said goodbye"]
+      },
+      slackThread: {
+        prompt: "You sounded different when you ___.",
+        options: ["responded", "slacked me", "joined the call", "said 'quick question'"]
+      },
+      unhinged: {
+        prompt: "You sounded different when you ___.",
+        options: ["screeched", "texted", "lied", "sent the voice note"]
+      },
+      betweenTheLines: {
+        prompt: "You sounded different when you ___.",
+        options: ["responded", "answered", "spoke", "paused"]
+      }
+    }
+  },
+  {
+    id: 5,
+    scenario: "misunderstanding",
+    variants: {
+      aftermath: {
+        prompt: "I thought you understood what I was ___.",
+        options: ["saying", "feeling", "asking", "trying not to say"]
+      },
+      slackThread: {
+        prompt: "I thought you understood what I was ___.",
+        options: ["saying", "flagging", "asking for", "very clearly documenting"]
+      },
+      unhinged: {
+        prompt: "I thought you understood what I was ___.",
+        options: ["screaming", "implying", "manifesting", "warning you about"]
+      },
+      betweenTheLines: {
+        prompt: "I thought you understood what I was ___.",
+        options: ["saying", "feeling", "trying to say", "asking for"]
+      }
+    }
+  },
+  {
+    id: 6,
+    scenario: "regret_over_wording",
+    variants: {
+      aftermath: {
+        prompt: "I didn’t mean to ___ it like that.",
+        options: ["say", "leave", "frame", "end"]
+      },
+      slackThread: {
+        prompt: "I didn’t mean to ___ it like that.",
+        options: ["word", "send", "escalate", "make it your problem"]
+      },
+      unhinged: {
+        prompt: "I didn’t mean to ___ it like that.",
+        options: ["announce", "text", "ignite", "yell"]
+      },
+      betweenTheLines: {
+        prompt: "I didn’t mean to ___ it like that.",
+        options: ["say", "put", "frame", "leave"]
+      }
+    }
+  },
+  {
+    id: 7,
+    scenario: "situation_escalated",
+    variants: {
+      aftermath: {
+        prompt: "I didn’t realize it would ___ this.",
+        options: ["become", "feel like", "end like", "cost"]
+      },
+      slackThread: {
+        prompt: "I didn’t realize it would ___ this.",
+        options: ["become", "escalate into", "derail", "require three meetings"]
+      },
+      unhinged: {
+        prompt: "I didn’t realize it would ___ this.",
+        options: ["turn into", "summon", "destroy", "involve the mayor"]
+      },
+      betweenTheLines: {
+        prompt: "I didn’t realize it would ___ this.",
+        options: ["become", "turn into", "feel like", "change"]
+      }
+    }
+  },
+  {
+    id: 8,
+    scenario: "waiting_too_long",
+    variants: {
+      aftermath: {
+        prompt: "I kept waiting for the right moment to ___.",
+        options: ["say it", "explain", "apologize", "stay"]
+      },
+      slackThread: {
+        prompt: "I kept waiting for the right moment to ___.",
+        options: ["follow up", "push back", "escalate", "ask who owns this"]
+      },
+      unhinged: {
+        prompt: "I kept waiting for the right moment to ___.",
+        options: ["confess", "panic", "flee", "reveal the geese"]
+      },
+      betweenTheLines: {
+        prompt: "I kept waiting for the right moment to ___.",
+        options: ["say it", "explain", "ask", "be honest"]
+      }
+    }
+  },
+  {
+    id: 9,
+    scenario: "confession_moment",
+    variants: {
+      aftermath: {
+        prompt: "I should have told you that I ___.",
+        options: ["cared", "was scared", "needed you", "never stopped"]
+      },
+      slackThread: {
+        prompt: "I should have told you that I ___.",
+        options: ["saw this coming", "was right", "needed context", "already fixed it"]
+      },
+      unhinged: {
+        prompt: "I should have told you that I ___.",
+        options: ["knew the llama", "was lying", "ate the evidence", "panicked immediately"]
+      },
+      betweenTheLines: {
+        prompt: "I should have told you that I ___.",
+        options: ["cared", "was worried", "didn’t know how", "wasn’t ready"]
+      }
+    }
+  },
+  {
+    id: 10,
+    scenario: "fear_of_being_left",
+    variants: {
+      aftermath: {
+        prompt: "I didn’t think you would ever ___.",
+        options: ["leave", "forgive me", "come back", "forget"]
+      },
+      slackThread: {
+        prompt: "I didn’t think you would ever ___.",
+        options: ["reply", "approve it", "own this", "stop looping me in"]
+      },
+      unhinged: {
+        prompt: "I didn’t think you would ever ___.",
+        options: ["leave", "return", "forgive the clown", "open the attachment"]
+      },
+      betweenTheLines: {
+        prompt: "I didn’t think you would ever ___.",
+        options: ["leave", "say that", "come back", "understand"]
+      }
+    }
+  },
+  {
+    id: 11,
+    scenario: "last_time_together",
+    variants: {
+      aftermath: {
+        prompt: "I didn’t know that would be the last time we ___.",
+        options: ["talked", "laughed", "saw each other", "tried"]
+      },
+      slackThread: {
+        prompt: "I didn’t know that would be the last time we ___.",
+        options: ["aligned", "worked quietly", "had a normal meeting", "pretended this was fine"]
+      },
+      unhinged: {
+        prompt: "I didn’t know that would be the last time we ___.",
+        options: ["spoke", "escaped", "trusted Greg", "ordered mozzarella sticks"]
+      },
+      betweenTheLines: {
+        prompt: "I didn’t know that would be the last time we ___.",
+        options: ["talked", "laughed", "saw each other", "were honest"]
+      }
+    }
+  },
+  {
+    id: 12,
+    scenario: "replaying_what_happened",
+    variants: {
+      aftermath: {
+        prompt: "I keep replaying what you ___.",
+        options: ["said", "meant", "didn’t say", "couldn’t admit"]
+      },
+      slackThread: {
+        prompt: "I keep replaying what you ___.",
+        options: ["wrote", "meant", "left out", "called 'actionable'"]
+      },
+      unhinged: {
+        prompt: "I keep replaying what you ___.",
+        options: ["did", "texted", "summoned", "said before the fireworks"]
+      },
+      betweenTheLines: {
+        prompt: "I keep replaying what you ___.",
+        options: ["said", "meant", "didn’t say", "did"]
+      }
+    }
+  },
+  {
+    id: 13,
+    scenario: "wondering_if_they_saw_it",
+    variants: {
+      aftermath: {
+        prompt: "I don’t know if you ever ___.",
+        options: ["read it", "saw me", "understood", "forgave me"]
+      },
+      slackThread: {
+        prompt: "I don’t know if you ever ___.",
+        options: ["saw it", "read the thread", "opened the doc", "intended to respond"]
+      },
+      unhinged: {
+        prompt: "I don’t know if you ever ___.",
+        options: ["read it", "saw the raccoon", "opened the spreadsheet", "heard the warning"]
+      },
+      betweenTheLines: {
+        prompt: "I don’t know if you ever ___.",
+        options: ["read it", "understood", "saw it", "felt it"]
+      }
+    }
+  },
+  {
+    id: 14,
+    scenario: "wishing_it_was_said_sooner",
+    variants: {
+      aftermath: {
+        prompt: "I wish I had said it ___.",
+        options: ["sooner", "clearly", "gently", "before it was too late"]
+      },
+      slackThread: {
+        prompt: "I wish I had said it ___.",
+        options: ["earlier", "more directly", "with screenshots", "before the meeting"]
+      },
+      unhinged: {
+        prompt: "I wish I had said it ___.",
+        options: ["sooner", "louder", "before the alpaca incident", "in court"]
+      },
+      betweenTheLines: {
+        prompt: "I wish I had said it ___.",
+        options: ["sooner", "more clearly", "differently", "when it mattered"]
+      }
+    }
+  },
+  {
+    id: 15,
+    scenario: "final_truth",
+    variants: {
+      aftermath: {
+        prompt: "I just needed you to know that I ___.",
+        options: ["loved you", "tried", "was sorry", "waited"]
+      },
+      slackThread: {
+        prompt: "I just needed you to know that I ___.",
+        options: ["tried", "flagged this", "documented everything", "could not have been clearer"]
+      },
+      unhinged: {
+        prompt: "I just needed you to know that I ___.",
+        options: ["tried", "ate the hot dog", "never trusted Kevin", "brought the fog machine"]
+      },
+      betweenTheLines: {
+        prompt: "I just needed you to know that I ___.",
+        options: ["tried", "cared", "was sorry", "meant it"]
+      }
+    }
+  },
+  {
+    id: 16,
+    scenario: "hope_for_response",
+    variants: {
+      aftermath: {
+        prompt: "A part of me still hopes you ___.",
+        options: ["reply", "understand", "come back", "remember"]
+      },
+      slackThread: {
+        prompt: "A part of me still hopes you ___.",
+        options: ["reply", "acknowledge this", "read the notes", "stop saying 'per my last'"]
+      },
+      unhinged: {
+        prompt: "A part of me still hopes you ___.",
+        options: ["reply", "return the sword", "admit it", "bring queso"]
+      },
+      betweenTheLines: {
+        prompt: "A part of me still hopes you ___.",
+        options: ["reply", "understand", "remember", "say something"]
+      }
+    }
+  },
+  {
+    id: 17,
+    scenario: "ownership_of_fault",
+    variants: {
+      aftermath: {
+        prompt: "Maybe I was the one who ___ it.",
+        options: ["ruined", "delayed", "misread", "couldn’t hold"]
+      },
+      slackThread: {
+        prompt: "Maybe I was the one who ___ it.",
+        options: ["escalated", "overexplained", "made a deck about", "touched"]
+      },
+      unhinged: {
+        prompt: "Maybe I was the one who ___ it.",
+        options: ["cursed", "broke", "fed after midnight", "named poorly"]
+      },
+      betweenTheLines: {
+        prompt: "Maybe I was the one who ___ it.",
+        options: ["misread", "pushed", "rushed", "made harder"]
+      }
+    }
+  },
+  {
+    id: 18,
+    scenario: "realizing_it_changed_you",
+    variants: {
+      aftermath: {
+        prompt: "After all of this, I’m still not the same ___.",
+        options: ["person", "after", "with anyone", "when I remember you"]
+      },
+      slackThread: {
+        prompt: "After all of this, I’m still not the same ___.",
+        options: ["employee", "after that reorg", "in meetings", "since the offsite"]
+      },
+      unhinged: {
+        prompt: "After all of this, I’m still not the same ___.",
+        options: ["man", "citizen", "after the wedding", "since the goose attack"]
+      },
+      betweenTheLines: {
+        prompt: "After all of this, I’m still not the same ___.",
+        options: ["person", "afterward", "with people", "when I think about it"]
+      }
+    }
+  },
+  {
+    id: 19,
+    scenario: "letting_go_or_not",
+    variants: {
+      aftermath: {
+        prompt: "I don’t know if I should ___ this.",
+        options: ["let go of", "hold onto", "forgive", "name"]
+      },
+      slackThread: {
+        prompt: "I don’t know if I should ___ this.",
+        options: ["escalate", "let go of", "document", "bring up again"]
+      },
+      unhinged: {
+        prompt: "I don’t know if I should ___ this.",
+        options: ["release", "fight", "eat", "set on fire"]
+      },
+      betweenTheLines: {
+        prompt: "I don’t know if I should ___ this.",
+        options: ["let go of", "keep carrying", "name", "revisit"]
+      }
+    }
+  },
+  {
+    id: 20,
+    scenario: "final_unresolved_message",
+    variants: {
+      aftermath: {
+        prompt: "If this is the last thing I say, I hope you ___.",
+        options: ["understand", "forgive me", "remember me kindly", "know I meant it"]
+      },
+      slackThread: {
+        prompt: "If this is the last thing I say, I hope you ___.",
+        options: ["read the doc", "own the follow-up", "find the link", "stop replying-all"]
+      },
+      unhinged: {
+        prompt: "If this is the last thing I say, I hope you ___.",
+        options: ["bring snacks", "run", "believe me", "never tell the pigeons"]
+      },
+      betweenTheLines: {
+        prompt: "If this is the last thing I say, I hope you ___.",
+        options: ["understand", "remember", "know I tried", "hear what I meant"]
+      }
+    }
+  }
+];
+Recommended mode labels in the UI
+export const modes = [
+  {
+    id: "betweenTheLines",
+    title: "Between the Lines",
+    subtitle: "Thoughtful, grounded, slightly serious"
+  },
+  {
+    id: "aftermath",
+    title: "Aftermath",
+    subtitle: "For the words you should’ve said sooner"
+  },
+  {
+    id: "slackThread",
+    title: "Slack Thread",
+    subtitle: "Passive-aggressive, dry, and painfully familiar"
+  },
+  {
+    id: "unhinged",
+    title: "Unhinged",
+    subtitle: "Chaos, nonsense, and terrible decisions"
+  }
+];
+Recommended default mode
+
+Use betweenTheLines as the default first-play mode. It has the widest appeal and best onboarding feel.
